@@ -1,0 +1,45 @@
+<v-container>
+      <v-row>
+        <v-col cols="6">
+  
+          <h2 class="mb-5"> Lista de Tareas </h2>
+          <v-card
+            elevation="3"
+            outlined
+            shaped
+            class="pa-6 mb-5"
+            v-for="(tarea,index) in tareas"
+            :key="index">
+            <v-card-title>{{ tarea.titulo }}</v-card-title>
+            <v-card-text>
+              {{ tarea.descripcion }}
+            </v-card-text>
+            <v-card-actions>
+              <v-btn class="warning" @click="editar(tarea.id)" > EDITAR </v-btn>
+              <v-btn class="error" @click="eliminarTarea(tarea.id)"> ELIMINAR </v-btn>
+            </v-card-actions>
+          </v-card>
+  
+        </v-col>
+  
+        <v-col>
+  
+          <h2 class="mb-5">Agregar Tareas</h2>
+          <v-card class="pa-5 rounded">
+            <form
+              ref="formTareas"
+              @submit.prevent="editarForm ? editarTarea() : agregarTarea()">
+              <v-text-field
+                label="Nueva Tarea"
+                v-model="titulo"></v-text-field>
+              <v-textarea label="Descripción tarea" v-model="descripcion"></v-textarea>
+              <v-btn
+                block
+                :color="editarForm ? 'warning' : 'success'"
+                type="submit">{{editarForm ? 'EDITAR' : 'GUARDAR'}}</v-btn>
+            </form>
+          </v-card>
+        </v-col>
+        
+      </v-row>
+</v-container>

@@ -17,6 +17,36 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  },
+  {
+    path: '/tareas',
+    name: 'tareas',
+    component: () => import(/* webpackChunkName: "TareasVue" */ '@/modules/listaTareas/Views/TareasView/TareasVue.vue')
+  },
+  {
+    path: '/counter',
+    name: 'counter',
+    component: () => import(/* webpackChunkName: "TareasVue" */ '@/modules/CounterModule/Views/CounterView.vue')
+  },
+  {
+    path: '/yes-not',
+    name: 'yesno',
+    component: () => import(/* webpackChunkName: "TareasVue" */ '@/modules/yesOrNotApp/yesOrNotView/yesOrNotView.vue')
+  },
+  {
+    path: '/acuacar',
+    name: 'acuacar',
+    component: () => import(/* webpackChunkName: "TareasVue" */ '@/modules/AcuacarApi/views/AcuacarView.vue')
+  },
+  {
+    path: '/formularios',
+    name: 'formularios',
+    component: () => import(/* webpackChunkName: "TareasVue" */ '@/modules/formularios/views/FormularioView.vue')
+  },
+  {
+    path: '/trabajo',
+    name: 'trabajo',
+    component: () => import(/* webpackChunkName: "TareasVue" */ '@/modules/trabajoAcuacar/views/trabajo.vue')
   }
 ]
 
