@@ -1,18 +1,20 @@
 <template>
-    <Observacion/>
+  <div class="ma-5">
+    <LeerExcel />
+  </div>
 </template>
 
 <script>
-
-import Observacion from "../components/Observaciones.vue";
+import { defineAsyncComponent } from "vue";
 
 export default {
-    components:{
-        Observacion
-    }
-}
+  components: {
+    LeerExcel: defineAsyncComponent(() =>
+      import("../components/leerExcel.vue")
+    ),
+  },
+};
 </script>
 
 <style>
-
 </style>
